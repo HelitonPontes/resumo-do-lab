@@ -304,9 +304,7 @@ Após a implantação:
    - **RDP** (Windows)  
    - **SSH** (Linux)
 
-Exemplo de conexão via SSH:
-```bash
-ssh azureuser@<ip-publico>
+
 
 
 
