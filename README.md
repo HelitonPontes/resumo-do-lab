@@ -46,8 +46,33 @@ A seguir, apresento uma visão organizada dos principais grupos de serviços:
 - **GitHub Actions (integração com Azure)** – Automação de builds, testes e deploys.
 - **Azure Monitor e Application Insights** – Monitoramento e métricas de desempenho.
 
+# ☁️ Tipos de Serviços de Nuvem — Microsoft Azure
+
+A computação em nuvem é estruturada em diferentes **modelos de serviço**, que definem o nível de controle, responsabilidade e flexibilidade entre o provedor e o cliente.  
+Os três principais modelos são: **IaaS**, **PaaS** e **SaaS** — além de extensões modernas como **FaaS** e **CaaS**.
+
 ---
 
+## 🧱 Modelos Clássicos de Serviços em Nuvem
+
+| 🏷️ Tipo de Serviço | 🧩 Nome Completo | ⚙️ Responsabilidade do Usuário | ☁️ Responsabilidade do Provedor | 💡 Exemplos no Azure | 🚀 Casos de Uso |
+|--------------------|-----------------|--------------------------------|----------------------------------|----------------------|----------------|
+| **IaaS** | Infrastructure as a Service | Sistema operacional, middleware, runtime, aplicações e dados | Rede, armazenamento, servidores e virtualização | Azure Virtual Machines, Azure Storage, Virtual Network | Hospedagem de servidores, ambientes de teste, migração de infraestrutura física. |
+| **PaaS** | Platform as a Service | Aplicações e dados | Rede, armazenamento, servidores, SO, middleware, runtime | Azure App Service, Azure SQL Database, Azure Functions | Desenvolvimento e hospedagem de aplicações web, APIs e microserviços. |
+| **SaaS** | Software as a Service | Uso do software (sem necessidade de gerenciar infraestrutura ou plataforma) | Todo o ambiente e aplicação | Microsoft 365, Dynamics 365, Power BI | Aplicações prontas para uso, produtividade, CRM, BI. |
+
+---
+
+## ⚙️ Modelos Modernos e Complementares
+
+| 🏷️ Tipo de Serviço | 🧩 Nome Completo | 💡 Conceito | 💻 Exemplos no Azure | 🚀 Casos de Uso |
+|--------------------|-----------------|-------------|----------------------|----------------|
+| **FaaS** | Function as a Service | Execução de código sob demanda (serverless), pagando apenas pelo uso | Azure Functions | Automação de eventos, backend sem servidor, integrações rápidas. |
+| **CaaS** | Container as a Service | Gerenciamento de contêineres e orquestração de clusters | Azure Kubernetes Service (AKS) | Aplicações em microserviços, pipelines CI/CD, escalabilidade dinâmica. |
+| **DBaaS** | Database as a Service | Banco de dados totalmente gerenciado | Azure SQL Database, Cosmos DB | Gerenciamento de dados com alta disponibilidade e backup automático. |
+| **BaaS** | Backend as a Service | Backend pronto com autenticação, APIs e armazena
+
+---
 ## 🚀 Benefícios da Adoção do Azure
 - Alta disponibilidade e escalabilidade global;  
 - Segurança de nível corporativo e conformidade;  
@@ -55,7 +80,149 @@ A seguir, apresento uma visão organizada dos principais grupos de serviços:
 - Integração facilitada com ferramentas DevOps e serviços Microsoft;  
 - Suporte completo a múltiplas linguagens e frameworks.
 
+# ☁️ SLA dos Principais Serviços da Plataforma Microsoft Azure
+
+| 🧩 Serviço | 🔒 Nível de Disponibilidade (SLA) | 📘 Detalhes / Condições |
+|------------|----------------------------------|--------------------------|
+| **Máquinas Virtuais (VMs)** | - 99,99% com 2+ instâncias em **Availability Zones**<br>- 99,95% com 2+ instâncias em **Availability Set**<br>- 99,9% (Single Instance com **Premium SSD/Ultra Disk**)<br>- 99,5% (Single Instance com **Standard SSD**)<br>- 95% (Single Instance com **HDD**) | SLA de conectividade garantida a pelo menos uma instância virtual em execução. |
+| **Azure SQL Database** | **99,995%** (camada *Business Critical* ou com redundância de zona) | Garantia de alta disponibilidade com RPO de 5s e RTO de 30s em bancos geo-replicados. |
+| **Azure SQL Managed Instance** | **99,99%** | Disponibilidade garantida para instâncias configuradas corretamente em ambientes General Purpose e Business Critical. |
+| **Azure App Service / Web Apps** | - **99,99%** com *Availability Zones*<br>- **99,95%** sem zonas | Hospedagem gerenciada de aplicações web e APIs com failover automático. |
+| **Azure Kubernetes Service (AKS)** | **99,95%** (clusters com 2+ nós e zonas de disponibilidade) | Garantia de disponibilidade do *API Server* e do *control plane*. |
+| **Azure Storage (Blob, Files, Queue, Table)** | **99,99%** (armazenamento local redundante - LRS)<br>**99,999999999%** (durabilidade dos dados) | Alta durabilidade com replicação automática e redundância geográfica opcional. |
+| **Azure Load Balancer** | **99,99%** | SLA de disponibilidade para balanceamento interno e externo de tráfego. |
+| **Azure VPN Gateway** | **99,95%** | SLA de conectividade entre redes virtuais e locais. |
+| **Azure Active Directory (AAD)** | **99,99%** | SLA para autenticação, gerenciamento de identidades e single sign-on. |
+| **Azure DNS** | **100%** | SLA de disponibilidade total para resolução e gerenciamento de DNS hospedado no Azure. |
+| **Azure DevOps Services** | **99,9%** | Garantia de disponibilidade dos serviços de pipelines, repositórios e boards. |
+
 ---
+
+> 🧠 **Observação:** Os valores de SLA podem variar conforme a região, configuração do serviço e tipo de contrato.  
+> Sempre consulte a documentação oficial atualizada em:  
+> [https://azure.microsoft.com/support/legal/sla](https://azure.microsoft.com/support/legal/sla)
+
+
+
+---
+
+# ☁️ Exemplos Práticos de Aplicações em Nuvem — Microsoft Azure
+
+A computação em nuvem permite que empresas e desenvolvedores criem soluções escaláveis, seguras e disponíveis globalmente.  
+A seguir, apresentamos **5 exemplos reais de aplicações na nuvem** e como elas utilizam os serviços do Microsoft Azure.
+
+---
+
+## 🧩 1. Aplicação Web Escalável
+**Tipo de serviço:** Platform as a Service (PaaS)
+
+**Serviços Azure utilizados:**
+- Azure App Service  
+- Azure SQL Database  
+- Azure Application Insights  
+
+**Descrição:**
+Aplicação web corporativa hospedada no Azure App Service, com banco de dados relacional em Azure SQL.  
+A solução pode escalar automaticamente durante picos de acesso.
+
+**Benefícios:**
+- Escalabilidade automática sob demanda;  
+- Baixo custo operacional;  
+- Monitoramento em tempo real.  
+
+**Caso de uso:**  
+Portal de vendas online que suporta milhares de acessos simultâneos em campanhas promocionais.
+
+---
+
+## ⚙️ 2. Infraestrutura Virtualizada para ERP
+**Tipo de serviço:** Infrastructure as a Service (IaaS)
+
+**Serviços Azure utilizados:**
+- Azure Virtual Machines  
+- Virtual Network  
+- Azure Backup  
+
+**Descrição:**
+Hospedagem de um sistema ERP corporativo em VMs do Azure, com controle total sobre o sistema operacional e rede.
+
+**Benefícios:**
+- Alta disponibilidade (SLA de 99,99%);  
+- Recuperação rápida em caso de falha;  
+- Flexibilidade para customizações.  
+
+**Caso de uso:**  
+Ambiente de produção para sistema ERP TOTVS, SAP ou Oracle em nuvem híbrida.
+
+---
+
+## 🤖 3. Chatbot Inteligente com IA
+**Tipo de serviço:** AI as a Service (AIaaS)
+
+**Serviços Azure utilizados:**
+- Azure Bot Service  
+- Azure Cognitive Services (Language, Speech)  
+- Azure OpenAI Service  
+
+**Descrição:**
+Chatbot inteligente para atendimento automatizado ao cliente, com reconhecimento de linguagem natural e voz.
+
+**Benefícios:**
+- Redução de custos operacionais;  
+- Atendimento 24/7;  
+- Integração com sites, WhatsApp e Teams.  
+
+**Caso de uso:**  
+Assistente virtual de suporte técnico para empresas de telecomunicações.
+
+---
+
+## 📦 4. Armazenamento e Backup Corporativo
+**Tipo de serviço:** Storage as a Service (STaaS)
+
+**Serviços Azure utilizados:**
+- Azure Blob Storage  
+- Azure Files  
+- Azure Backup  
+
+**Descrição:**
+Sistema de backup e armazenamento de grandes volumes de arquivos e logs corporativos.
+
+**Benefícios:**
+- Alta durabilidade (11 noves de confiabilidade);  
+- Acesso seguro via chave e token;  
+- Integração com sistemas locais.  
+
+**Caso de uso:**  
+Backup automatizado de servidores físicos e dados de clientes em escritórios remotos.
+
+---
+
+## 📊 5. Análise de Dados e BI em Tempo Real
+**Tipo de serviço:** Platform + Software as a Service (PaaS + SaaS)
+
+**Serviços Azure utilizados:**
+- Azure Synapse Analytics  
+- Power BI  
+- Azure Data Lake Storage  
+
+**Descrição:**
+Pipeline de dados em tempo real integrando fontes internas e externas para dashboards de inteligência de negócios.
+
+**Benefícios:**
+- Insights instantâneos sobre operações;  
+- Conectividade com múltiplas fontes;  
+- Dashboards interativos e acessíveis via navegador.  
+
+**Caso de uso:**  
+Análise de desempenho de vendas e comportamento de clientes em tempo real.
+
+---
+
+> 📘 **Fonte:** Microsoft Azure — [https://azure.microsoft.com/pt-br/](https://azure.microsoft.com/pt-br/)  
+> 💡 *Esses exemplos demonstram como os diferentes modelos de nuvem (IaaS, PaaS, SaaS e AIaaS) podem ser aplicados conforme a necessidade e maturidade tecnológica de cada empresa.*
+
+
 
 > 💡 *A computação em nuvem é o alicerce da transformação digital moderna, e o Azure se destaca por sua flexibilidade, segurança e integração com o ecossistema Microsoft.*
 
