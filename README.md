@@ -218,9 +218,96 @@ Pipeline de dados em tempo real integrando fontes internas e externas para dashb
 Análise de desempenho de vendas e comportamento de clientes em tempo real.
 
 ---
+# ☁️ Tutorial: Como Criar uma Máquina Virtual no Microsoft Azure
 
-> 📘 **Fonte:** Microsoft Azure — [https://azure.microsoft.com/pt-br/](https://azure.microsoft.com/pt-br/)  
-> 💡 *Esses exemplos demonstram como os diferentes modelos de nuvem (IaaS, PaaS, SaaS e AIaaS) podem ser aplicados conforme a necessidade e maturidade tecnológica de cada empresa.*
+> 📘 **Objetivo:**  
+Aprender a criar, configurar e acessar uma Máquina Virtual (VM) no Microsoft Azure, passo a passo, utilizando o portal web.
+
+---
+
+## 🧩 1. Acessar o Portal do Azure
+
+1. Acesse o portal oficial: [https://portal.azure.com](https://portal.azure.com)
+2. Faça login com sua conta Microsoft (corporativa ou pessoal).
+3. Após o login, você verá o **Dashboard do Azure**.
+
+![Portal do Azure](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/portal-home.png)
+
+---
+
+## ⚙️ 2. Criar um Novo Recurso
+
+1. No menu lateral esquerdo, clique em **“Criar um recurso”**.
+2. Digite **“Máquina Virtual”** na barra de pesquisa e selecione a opção **Virtual Machine**.
+3. Clique em **“Criar”** para iniciar a configuração.
+
+![Criar Recurso](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/search-vm.png)
+
+---
+
+## 🧱 3. Configurar a Máquina Virtual
+
+### 🗂️ Aba “Noções Básicas”
+Preencha as informações iniciais:
+- **Assinatura:** escolha a conta de faturamento.
+- **Grupo de Recursos:** crie um novo ou selecione um existente.
+- **Nome da VM:** defina um nome amigável, como `vm-treinamento`.
+- **Região:** escolha a região mais próxima (ex: *Brazil South*).
+- **Imagem:** selecione o sistema operacional (ex: *Windows Server 2022* ou *Ubuntu 22.04 LTS*).
+- **Tamanho:** escolha o tipo de hardware (ex: *B1s*, *D2s_v3*).
+
+![Configuração Básica](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/basics.png)
+
+---
+
+## 🔐 4. Definir Credenciais de Acesso
+
+Escolha o método de autenticação:
+- **Usuário e senha** (para Windows/Linux)
+- **Chave pública SSH** (recomendado para Linux)
+
+⚠️ **Dica:**  
+Anote o nome de usuário e senha/chave SSH — você precisará delas para acessar a VM.
+
+![Credenciais](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/ssh-key.png)
+
+---
+
+## 🌐 5. Configurar Rede e Segurança
+
+Na aba **Rede**:
+- Mantenha a **rede virtual padrão** ou crie uma nova.
+- Habilite o **acesso à porta 22 (SSH)** para Linux ou **porta 3389 (RDP)** para Windows.
+
+![Rede e Porta](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/network.png)
+
+---
+
+## 💾 6. Revisar e Criar
+
+1. Clique em **“Revisar + Criar”**.
+2. O Azure validará as configurações.
+3. Clique em **“Criar”** para iniciar a implantação da VM.
+
+O processo de criação leva alguns minutos.
+
+![Revisar e Criar](https://learn.microsoft.com/en-us/azure/virtual-machines/media/quick-create-portal/review.png)
+
+---
+
+## 🖥️ 7. Conectar-se à Máquina Virtual
+
+Após a implantação:
+1. Vá até o recurso criado.
+2. Clique em **“Conectar”**.
+3. Escolha:
+   - **RDP** (Windows)  
+   - **SSH** (Linux)
+
+Exemplo de conexão via SSH:
+```bash
+ssh azureuser@<ip-publico>
+
 
 
 
